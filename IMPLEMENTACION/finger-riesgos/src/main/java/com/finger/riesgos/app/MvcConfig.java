@@ -56,13 +56,13 @@ public class MvcConfig implements WebMvcConfigurer {
 	 * metodo que serializa el objeto a XML
 	 * @return
 	 */
-	@Bean
-	public Jaxb2Marshaller jaxb2Marshaller() {
-		Jaxb2Marshaller marshaller =  new Jaxb2Marshaller();
-		// Clases que se convierte a XML, se traen las clases mas compuestas
-		marshaller.setClassesToBeBound(new Class[] {com.finger.riesgos.app.view.xml.ClienteList.class});
-		return marshaller;
-	}
+//	@Bean
+//	public Jaxb2Marshaller jaxb2Marshaller() {
+//		Jaxb2Marshaller marshaller =  new Jaxb2Marshaller();
+//		// Clases que se convierte a XML, se traen las clases mas compuestas
+//		marshaller.setClassesToBeBound(new Class[] {com.finger.riesgos.app.view.xml.ClienteList.class});
+//		return marshaller;
+//	}
 	
 	
 	

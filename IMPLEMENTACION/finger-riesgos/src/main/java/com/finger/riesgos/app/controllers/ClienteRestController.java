@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.finger.riesgos.app.models.entity.Cliente;
 import com.finger.riesgos.app.models.service.IClienteService;
-import com.finger.riesgos.app.view.xml.ClienteList;
+
 
 
 @RestController // Permite que sea una clase de controlador solo con respuestas rest es decir json o xml
@@ -19,11 +19,6 @@ public class ClienteRestController {
 	
 	@Autowired
 	private IClienteService clienteService;
-	
-	@GetMapping(value = "/listar-xml")
-	public ClienteList listarXml() {
-		return new ClienteList(clienteService.findAll());
-	}
 	
 	// SOlo tiene acceso el rol admin
 	@Secured("ROLE_ADMIN")

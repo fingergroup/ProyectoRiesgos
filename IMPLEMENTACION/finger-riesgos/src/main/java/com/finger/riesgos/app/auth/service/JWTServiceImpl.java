@@ -29,6 +29,9 @@ public static final String SECRET = Base64Utils.encodeToString("Alguna.Clave.Sec
 	public static final String TOKEN_PREFIX = "Bearer "; // es un prefijo del tiken
 	public static final String HEADER_STRING = "Authorization";
 	
+	/**
+	 * Metodo que crea el token
+	 */
 	@Override
 	public String create(Authentication auth) throws IOException {
 

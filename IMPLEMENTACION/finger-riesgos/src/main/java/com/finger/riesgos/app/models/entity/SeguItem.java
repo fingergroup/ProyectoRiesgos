@@ -2,6 +2,9 @@ package com.finger.riesgos.app.models.entity;
 
 import java.io.Serializable;
 import javax.persistence.*;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import java.util.List;
 
 
@@ -11,7 +14,6 @@ import java.util.List;
  */
 @Entity
 @Table(name="segu_item")
-@NamedQuery(name="SeguItem.findAll", query="SELECT s FROM SeguItem s")
 public class SeguItem implements Serializable {
 	private static final long serialVersionUID = 1L;
 
@@ -30,8 +32,9 @@ public class SeguItem implements Serializable {
 	private String itemNombre;
 
 	//bi-directional many-to-one association to SeguMenuItem
-	@OneToMany(mappedBy="seguItem")
-	private List<SeguMenuItem> seguMenuItems;
+//	@OneToMany(mappedBy="seguItem", fetch=FetchType.LAZY)
+//	@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"}) // Ignora atributos que se desean no esten en la serializacion
+//	private List<SeguMenuItem> seguMenuItems;
 
 	public SeguItem() {
 	}
@@ -68,26 +71,26 @@ public class SeguItem implements Serializable {
 		this.itemNombre = itemNombre;
 	}
 
-	public List<SeguMenuItem> getSeguMenuItems() {
-		return this.seguMenuItems;
-	}
+//	public List<SeguMenuItem> getSeguMenuItems() {
+//		return this.seguMenuItems;
+//	}
+//
+//	public void setSeguMenuItems(List<SeguMenuItem> seguMenuItems) {
+//		this.seguMenuItems = seguMenuItems;
+//	}
 
-	public void setSeguMenuItems(List<SeguMenuItem> seguMenuItems) {
-		this.seguMenuItems = seguMenuItems;
-	}
-
-	public SeguMenuItem addSeguMenuItem(SeguMenuItem seguMenuItem) {
-		getSeguMenuItems().add(seguMenuItem);
-		seguMenuItem.setSeguItem(this);
-
-		return seguMenuItem;
-	}
-
-	public SeguMenuItem removeSeguMenuItem(SeguMenuItem seguMenuItem) {
-		getSeguMenuItems().remove(seguMenuItem);
-		seguMenuItem.setSeguItem(null);
-
-		return seguMenuItem;
-	}
+//	public SeguMenuItem addSeguMenuItem(SeguMenuItem seguMenuItem) {
+//		getSeguMenuItems().add(seguMenuItem);
+//		seguMenuItem.setSeguItem(this);
+//
+//		return seguMenuItem;
+//	}
+//
+//	public SeguMenuItem removeSeguMenuItem(SeguMenuItem seguMenuItem) {
+//		getSeguMenuItems().remove(seguMenuItem);
+//		seguMenuItem.setSeguItem(null);
+//
+//		return seguMenuItem;
+//	}
 
 }

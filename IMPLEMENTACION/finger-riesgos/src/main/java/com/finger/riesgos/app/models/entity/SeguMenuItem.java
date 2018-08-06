@@ -10,7 +10,6 @@ import javax.persistence.*;
  */
 @Entity
 @Table(name="segu_menu_item")
-@NamedQuery(name="SeguMenuItem.findAll", query="SELECT s FROM SeguMenuItem s")
 public class SeguMenuItem implements Serializable {
 	private static final long serialVersionUID = 1L;
 

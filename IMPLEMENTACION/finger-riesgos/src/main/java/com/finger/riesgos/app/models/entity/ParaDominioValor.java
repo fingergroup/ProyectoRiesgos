@@ -10,7 +10,6 @@ import javax.persistence.*;
  */
 @Entity
 @Table(name="para_dominio_valor")
-@NamedQuery(name="ParaDominioValor.findAll", query="SELECT p FROM ParaDominioValor p")
 public class ParaDominioValor implements Serializable {
 	private static final long serialVersionUID = 1L;
 

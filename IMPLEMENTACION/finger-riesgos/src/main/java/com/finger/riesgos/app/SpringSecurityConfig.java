@@ -15,6 +15,11 @@ import com.finger.riesgos.app.auth.filter.JWTAuthorizationFilter;
 import com.finger.riesgos.app.auth.service.JWTService;
 import com.finger.riesgos.app.models.service.JpaUserDetailsService;
 
+/**
+ * Clase Configuracion que establece la configuracion inicial de spring securiti
+ * @author julian
+ *
+ */
 @EnableGlobalMethodSecurity(securedEnabled=true, prePostEnabled=true)
 @Configuration
 public class SpringSecurityConfig extends WebSecurityConfigurerAdapter{
@@ -29,25 +34,15 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter{
 	@Autowired
 	private JWTService jwtService;
 	
+	/**
+	 * Metodo que realiza la configuracon del inicio de sesion
+	 */
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 
+		// Establece las rutas publicas del aplicativo
 		http.authorizeRequests().antMatchers("/", "/css/**", "/js/**", "/images/**", "/listar**", "/locale").permitAll()
 		.anyRequest().authenticated()
-		
-		/*
-		 * .and()
-		    .formLogin()
-		        .successHandler(successHandler)
-		        .loginPage("/login")
-		    .permitAll()
-		.and()
-		.logout().permitAll()
-		.and()
-		.exceptionHandling().accessDeniedPage("/error_403")
-		*
-		*/
-		
 		.and()
 		.addFilter(new JWTAuthenticationFilter(authenticationManager(), jwtService))//  Adiciona el filtro de loguin
 		.addFilter(new JWTAuthorizationFilter(authenticationManager(), jwtService))// Adiciona el filtro de autorizacion

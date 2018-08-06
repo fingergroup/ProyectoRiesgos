@@ -11,7 +11,6 @@ import java.util.List;
  */
 @Entity
 @Table(name="para_dominio")
-@NamedQuery(name="ParaDominio.findAll", query="SELECT p FROM ParaDominio p")
 public class ParaDominio implements Serializable {
 	private static final long serialVersionUID = 1L;
 

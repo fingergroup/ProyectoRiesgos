@@ -13,14 +13,13 @@ import java.util.List;
  */
 @Entity
 @Table(name="segu_usuario")
-@NamedQuery(name="SeguUsuario.findAll", query="SELECT s FROM SeguUsuario s")
 public class SeguUsuario implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="USUA_ID")
-	private String usuaId;
+	private Long usuaId;
 
 	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name="FECHA_CREACION")
@@ -61,11 +60,11 @@ public class SeguUsuario implements Serializable {
 	public SeguUsuario() {
 	}
 
-	public String getUsuaId() {
+	public Long getUsuaId() {
 		return this.usuaId;
 	}
 
-	public void setUsuaId(String usuaId) {
+	public void setUsuaId(Long usuaId) {
 		this.usuaId = usuaId;
 	}
 

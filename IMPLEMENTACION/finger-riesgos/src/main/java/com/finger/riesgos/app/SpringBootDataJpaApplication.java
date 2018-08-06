@@ -20,12 +20,13 @@ public class SpringBootDataJpaApplication implements CommandLineRunner {
 	}
 
 	@Override
+	/**
+	 * Metodo que se ejecuta al iniciar la aplicacion
+	 */
 	public void run(String... args) throws Exception {
 		// TODO Auto-generated method stub
 		
-		
 		String password = "12345";
-		
 		for(int i=0; i<2; i++) {
 			String bcryptPassword = passwordEncoder.encode(password);
 			System.out.println(bcryptPassword);

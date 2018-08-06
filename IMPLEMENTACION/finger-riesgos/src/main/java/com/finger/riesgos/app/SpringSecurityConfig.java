@@ -12,7 +12,6 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import com.finger.riesgos.app.auth.filter.JWTAuthenticationFilter;
 import com.finger.riesgos.app.auth.filter.JWTAuthorizationFilter;
-import com.finger.riesgos.app.auth.handler.LoginSuccessHandler;
 import com.finger.riesgos.app.auth.service.JWTService;
 import com.finger.riesgos.app.models.service.JpaUserDetailsService;
 
@@ -20,8 +19,6 @@ import com.finger.riesgos.app.models.service.JpaUserDetailsService;
 @Configuration
 public class SpringSecurityConfig extends WebSecurityConfigurerAdapter{
 
-//	@Autowired
-//	private LoginSuccessHandler successHandler;
 	
 	@Autowired
 	private JpaUserDetailsService userDetailsService;

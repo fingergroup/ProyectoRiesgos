@@ -23,10 +23,10 @@ import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.finger.riesgos.app.auth.service.JWTService;
 import com.finger.riesgos.app.auth.service.JWTServiceImpl;
-import com.finger.riesgos.app.models.entity.Usuario;
+import com.finger.riesgos.app.models.entity.SeguUsuario;
 
-import io.jsonwebtoken.Jwts;
-import io.jsonwebtoken.SignatureAlgorithm;
+
+
 
 // hereda de UsernamePasswordAuthenticationFilter que es parte de spring
 public class JWTAuthenticationFilter extends UsernamePasswordAuthenticationFilter {
@@ -63,14 +63,14 @@ public class JWTAuthenticationFilter extends UsernamePasswordAuthenticationFilte
 			logger.info("Password desde request parameter (form-data): " + password);
 			
 		} else { // Entra por aca por que se envia un raw o json
-			Usuario user = null;
+			SeguUsuario user = null;
 			try {
 				// request.getInputStream() aca esta el json del login
 				// castea el json a la entidad
-				user = new ObjectMapper().readValue(request.getInputStream(), Usuario.class);
+				user = new ObjectMapper().readValue(request.getInputStream(), SeguUsuario.class);
 				
-				username = user.getUsername();
-				password = user.getPassword();
+				username = user.getNombreUsuario();
+				password = user.getUsuaClave();
 				
 				logger.info("Username desde request InputStream (raw) o json: " + username);
 				logger.info("Password desde request InputStream (raw) o json: " + password);

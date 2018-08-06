@@ -4,11 +4,12 @@ import java.util.List;
 
 
 
-import com.finger.riesgos.app.models.entity.Cliente;
+
+import com.finger.riesgos.app.models.entity.SeguUsuario;
 
 
 public interface IClienteService {
 
-	public List<Cliente> findAll();
+	public List<SeguUsuario> findAll();
 
 }

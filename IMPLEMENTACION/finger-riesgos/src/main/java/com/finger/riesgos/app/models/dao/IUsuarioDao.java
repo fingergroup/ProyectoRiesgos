@@ -2,9 +2,10 @@ package com.finger.riesgos.app.models.dao;
 
 import org.springframework.data.repository.CrudRepository;
 
-import com.finger.riesgos.app.models.entity.Usuario;
+import com.finger.riesgos.app.models.entity.SeguUsuario;
 
-public interface IUsuarioDao extends CrudRepository<Usuario, Long>{
 
-	public Usuario findByUsername(String username);
+public interface IUsuarioDao extends CrudRepository<SeguUsuario, Long>{
+
+	public SeguUsuario findByNombreUsuario(String nombreUsuario);
 }

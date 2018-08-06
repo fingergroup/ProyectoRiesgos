@@ -8,7 +8,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.finger.riesgos.app.models.entity.Cliente;
+
+import com.finger.riesgos.app.models.entity.SeguUsuario;
 import com.finger.riesgos.app.models.service.IClienteService;
 
 
@@ -23,7 +24,7 @@ public class ClienteRestController {
 	// SOlo tiene acceso el rol admin
 	@Secured("ROLE_ADMIN")
 	@GetMapping(value = "/listar")
-	public List<Cliente> listar() {
+	public List<SeguUsuario> listar() {
 		return clienteService.findAll();
 	}
 	

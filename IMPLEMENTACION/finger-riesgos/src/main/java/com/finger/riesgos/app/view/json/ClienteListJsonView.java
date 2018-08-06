@@ -6,7 +6,8 @@ import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.view.json.MappingJackson2JsonView;
 
-import com.finger.riesgos.app.models.entity.Cliente;
+
+import com.finger.riesgos.app.models.entity.SeguUsuario;
 
 @Component("listar.json") // Genera el beans y el acceso es -json por medio de la vista, es decir es una vista
 // MappingJackson2JsonView permite deserializar el json
@@ -20,7 +21,7 @@ public class ClienteListJsonView extends MappingJackson2JsonView {
 		model.remove("titulo");
 		model.remove("page");
 		// Optiene el cliente
-		Page<Cliente> clientes = (Page<Cliente>) model.get("clientes");
+		Page<SeguUsuario> clientes = (Page<SeguUsuario>) model.get("clientes");
 		// Remuieve el cliente
 		model.remove("clientes");
 		// Modifica el cliente para que envie solo los atributos de la entidad

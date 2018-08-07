@@ -14,9 +14,9 @@ public class SeguUsuarioRol implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="USRO_ID")
-	private String usroId;
+	private Long usroId;
 
 	@Column(name="USRO_ESTADO")
 	private String usroEstado;
@@ -34,11 +34,11 @@ public class SeguUsuarioRol implements Serializable {
 	public SeguUsuarioRol() {
 	}
 
-	public String getUsroId() {
+	public Long getUsroId() {
 		return this.usroId;
 	}
 
-	public void setUsroId(String usroId) {
+	public void setUsroId(Long usroId) {
 		this.usroId = usroId;
 	}
 

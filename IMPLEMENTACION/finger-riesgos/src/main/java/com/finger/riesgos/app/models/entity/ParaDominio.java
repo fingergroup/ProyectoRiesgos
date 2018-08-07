@@ -17,7 +17,7 @@ public class ParaDominio implements Serializable {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name="DOMI_ID")
-	private String domiId;
+	private Long domiId;
 
 	@Column(name="DOMI_DESCRIPCION")
 	private String domiDescripcion;
@@ -38,11 +38,11 @@ public class ParaDominio implements Serializable {
 	public ParaDominio() {
 	}
 
-	public String getDomiId() {
+	public Long getDomiId() {
 		return this.domiId;
 	}
 
-	public void setDomiId(String domiId) {
+	public void setDomiId(Long domiId) {
 		this.domiId = domiId;
 	}
 

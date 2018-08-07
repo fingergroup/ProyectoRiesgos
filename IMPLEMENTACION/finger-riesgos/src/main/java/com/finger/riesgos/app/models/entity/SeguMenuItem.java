@@ -14,9 +14,9 @@ public class SeguMenuItem implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="MEIT_ID")
-	private String meitId;
+	private Long meitId;
 
 	@Column(name="MEIT_ESTADO")
 	private String meitEstado;
@@ -34,11 +34,11 @@ public class SeguMenuItem implements Serializable {
 	public SeguMenuItem() {
 	}
 
-	public String getMeitId() {
+	public Long getMeitId() {
 		return this.meitId;
 	}
 
-	public void setMeitId(String meitId) {
+	public void setMeitId(Long meitId) {
 		this.meitId = meitId;
 	}
 

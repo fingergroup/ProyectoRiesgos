@@ -15,9 +15,9 @@ public class SeguRol implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="ROL_ID")
-	private String rolId;
+	private Long rolId;
 
 	@Column(name="ROL_DESCRIPCION")
 	private String rolDescripcion;
@@ -39,11 +39,11 @@ public class SeguRol implements Serializable {
 	public SeguRol() {
 	}
 
-	public String getRolId() {
+	public Long getRolId() {
 		return this.rolId;
 	}
 
-	public void setRolId(String rolId) {
+	public void setRolId(Long rolId) {
 		this.rolId = rolId;
 	}
 

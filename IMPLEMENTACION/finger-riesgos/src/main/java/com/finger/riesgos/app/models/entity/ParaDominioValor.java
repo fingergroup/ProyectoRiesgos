@@ -16,7 +16,7 @@ public class ParaDominioValor implements Serializable {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name="DOVA_ID")
-	private String dovaId;
+	private Long dovaId;
 
 	@Column(name="DOVA_DESCRIPCION")
 	private String dovaDescripcion;
@@ -32,11 +32,11 @@ public class ParaDominioValor implements Serializable {
 	public ParaDominioValor() {
 	}
 
-	public String getDovaId() {
+	public Long getDovaId() {
 		return this.dovaId;
 	}
 
-	public void setDovaId(String dovaId) {
+	public void setDovaId(Long dovaId) {
 		this.dovaId = dovaId;
 	}
 

@@ -15,6 +15,8 @@ import java.util.List;
 @Table(name="segu_usuario")
 public class SeguUsuario implements Serializable {
 	private static final long serialVersionUID = 1L;
+	
+	
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -35,7 +37,7 @@ public class SeguUsuario implements Serializable {
 	@Column(name="USUA_ALIAS")
 	private String usuaAlias;
 
-	@Column(name="USUA_CLAVE")
+	@Column(name="USUA_CLAVE",length = 60)	
 	private String usuaClave;
 
 	@Column(name="USUA_EMAIL")

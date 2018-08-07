@@ -1,0 +1,4 @@
+url= us-cdbr-iron-east-01.cleardb.net
+esquema = heroku_7ee1d953cdd479b
+username = b53aaa28eeed49
+password = f904f6d7

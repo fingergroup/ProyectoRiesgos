@@ -1,17 +1,17 @@
 <script>
     $(function () {
-  	$('.navbar-toggle-sidebar').click(function () {
-  		$('.navbar-nav').toggleClass('slide-in');
-  		$('.side-body').toggleClass('body-slide-in');
-  		$('#search').removeClass('in').addClass('collapse').slideUp(200);
-  	});
+        $('.navbar-toggle-sidebar').click(function () {
+            $('.navbar-nav').toggleClass('slide-in');
+            $('.side-body').toggleClass('body-slide-in');
+            $('#search').removeClass('in').addClass('collapse').slideUp(200);
+        });
 
-  	$('#search-trigger').click(function () {
-  		$('.navbar-nav').removeClass('slide-in');
-  		$('.side-body').removeClass('body-slide-in');
-  		$('.search-input').focus();
-  	});
-  });
+        $('#search-trigger').click(function () {
+            $('.navbar-nav').removeClass('slide-in');
+            $('.side-body').removeClass('body-slide-in');
+            $('.search-input').focus();
+        });
+    });
 </script>
 <nav class="navbar navbar-default navbar-static-top">
     <div class="container-fluid">
@@ -33,7 +33,7 @@
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            
+
             <ul class="nav navbar-nav navbar-right">
                 <li>
                     <a href="http://www.fingergroup.com" target="_blank">Visitenos</a>
@@ -83,14 +83,14 @@
                             </li>
                             <li>
                                 <a (click)="eviarInstituciones()">
-                                    
+
                                     <span class="glyphicon glyphicon-edit"></span> Gestionar Establecimiento</a>
                             </li>
                             <li>
                                 <a (click)="eviarDatosPoblacion()">
                                     <span class="glyphicon glyphicon-user"></span> Gestionar Datos Población</a>
                             </li>
-                           
+
 
                             <!-- Dropdown-->
                             <li class="panel panel-default" id="dropdown">
@@ -104,16 +104,20 @@
                                     <div class="panel-body">
                                         <ul class="nav navbar-nav">
                                             <li>
-                                                <a (click)="eviarAntecedentes()"><span class="glyphicon glyphicon-random"></span>Antecedentes</a>
+                                                <a (click)="eviarAntecedentes()">
+                                                    <span class="glyphicon glyphicon-random"></span>Antecedentes</a>
                                             </li>
                                             <li>
-                                                <a (click)="eviarAmenazas()"><span class="glyphicon glyphicon-flash"></span>Amenazas</a>
+                                                <a (click)="eviarAmenazas()">
+                                                    <span class="glyphicon glyphicon-flash"></span>Amenazas</a>
                                             </li>
                                             <li>
-                                                <a (click)="eviarVulnerabilidad()"><span class="glyphicon glyphicon-grain"></span>Vulnerabilidad</a>
+                                                <a (click)="eviarVulnerabilidad()">
+                                                    <span class="glyphicon glyphicon-grain"></span>Vulnerabilidad</a>
                                             </li>
                                             <li>
-                                                <a (click)="eviarRiesgo()"><span class="glyphicon glyphicon-fire"></span>Riesgo</a>
+                                                <a (click)="eviarRiesgo()">
+                                                    <span class="glyphicon glyphicon-fire"></span>Riesgo</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -121,7 +125,7 @@
                             </li>
 
                             <li>
-                                <a (click)="eviarReportes()" style="cursor:pointer;" >
+                                <a (click)="eviarReportes()" style="cursor:pointer;">
                                     <span class="glyphicon glyphicon-stats"></span> Reportes</a>
                             </li>
 
@@ -134,19 +138,416 @@
         </div>
     </div>
     <div class="col-md-10 content">
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                Vulnerabilidad
-            </div>
-            <div class="panel-body">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
-                sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </div>
-        </div>
+        <h4>
+            <strong> PLANES ESCOLARES PARA LA GESTION DEL RIESGO - VULNERABILIDAD</strong>
+        </h4>
+        <aw-wizard>
+            <aw-wizard-step stepTitle="FACTOR FISICO">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        FACTOR FISICO
+                    </div>
+                    <div class="panel-body">
+                        <form>
+                            <div class="col-md-12 content">
+                                <div class="form-group row">
+                                    <table class="table table-hover">
+                                        <thead>
+                                            <tr>
+                                                <th>Caracteristica</th>
+                                                <th>Calificacion</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Estado de columnas del institución educativa</td>
+                                                <td>
+                                                    <select class="custom-select " id="inlineFormCustomSelect">
+                                                        <option selected>Seleccione</option>
+                                                        <option value="1">Exelente</option>
+                                                        <option value="1">Buena</option>
+                                                        <option value="1">Regular</option>
+                                                        <option value="1">Malo</option>
+                                                    </select>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Estado de columnas del institución educativa</td>
+                                                <td>
+                                                    <select class="custom-select " id="inlineFormCustomSelect">
+                                                        <option selected>Seleccione</option>
+                                                        <option value="1">Exelente</option>
+                                                        <option value="1">Buena</option>
+                                                        <option value="1">Regular</option>
+                                                        <option value="1">Malo</option>
+                                                    </select>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Estado de columnas del institución educativa</td>
+                                                <td>
+                                                    <select class="custom-select " id="inlineFormCustomSelect">
+                                                        <option selected>Seleccione</option>
+                                                        <option value="1">Exelente</option>
+                                                        <option value="1">Buena</option>
+                                                        <option value="1">Regular</option>
+                                                        <option value="1">Malo</option>
+                                                    </select>
+                                                </td>
+                                            </tr>
+
+
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+                <button type="button" class="btn btn-primary" awNextStep>Siguiente paso</button>
+            </aw-wizard-step>
+            <aw-wizard-step stepTitle="FACTOR ADMINISTRATIVO Y FNANCIERO" awOptionalStep>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                            FACTOR ADMINISTRATIVO Y FNANCIERO                        
+                    </div>
+                    <div class="panel-body">
+                        <form>
+                            <div class="col-md-12 content">
+                                <div class="form-group row">
+                                    <table class="table table-hover">
+                                        <thead>
+                                            <tr>
+                                                <th>Caracteristica</th>
+                                                <th>Calificacion</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Estado de columnas del institución educativa</td>
+                                                <td>
+                                                    <select class="custom-select " id="inlineFormCustomSelect">
+                                                        <option selected>Seleccione</option>
+                                                        <option value="1">Exelente</option>
+                                                        <option value="1">Buena</option>
+                                                        <option value="1">Regular</option>
+                                                        <option value="1">Malo</option>
+                                                    </select>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Estado de columnas del institución educativa</td>
+                                                <td>
+                                                    <select class="custom-select " id="inlineFormCustomSelect">
+                                                        <option selected>Seleccione</option>
+                                                        <option value="1">Exelente</option>
+                                                        <option value="1">Buena</option>
+                                                        <option value="1">Regular</option>
+                                                        <option value="1">Malo</option>
+                                                    </select>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Estado de columnas del institución educativa</td>
+                                                <td>
+                                                    <select class="custom-select " id="inlineFormCustomSelect">
+                                                        <option selected>Seleccione</option>
+                                                        <option value="1">Exelente</option>
+                                                        <option value="1">Buena</option>
+                                                        <option value="1">Regular</option>
+                                                        <option value="1">Malo</option>
+                                                    </select>
+                                                </td>
+                                            </tr>
+
+
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+                <button type="button" class="btn btn-primary" awPreviousStep>Anterior paso</button>
+                <button type="button" class="btn btn-primary" awNextStep>Siguiente paso</button>
+            </aw-wizard-step>
+            <aw-wizard-step stepTitle="FACTOR EDUCATIVO" awOptionalStep>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                            FACTOR EDUCATIVO                        
+                    </div>
+                    <div class="panel-body">
+                        <form>
+                            <div class="col-md-12 content">
+                                <div class="form-group row">
+                                    <table class="table table-hover">
+                                        <thead>
+                                            <tr>
+                                                <th>Caracteristica</th>
+                                                <th>Calificacion</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Estado de columnas del institución educativa</td>
+                                                <td>
+                                                    <select class="custom-select " id="inlineFormCustomSelect">
+                                                        <option selected>Seleccione</option>
+                                                        <option value="1">Exelente</option>
+                                                        <option value="1">Buena</option>
+                                                        <option value="1">Regular</option>
+                                                        <option value="1">Malo</option>
+                                                    </select>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Estado de columnas del institución educativa</td>
+                                                <td>
+                                                    <select class="custom-select " id="inlineFormCustomSelect">
+                                                        <option selected>Seleccione</option>
+                                                        <option value="1">Exelente</option>
+                                                        <option value="1">Buena</option>
+                                                        <option value="1">Regular</option>
+                                                        <option value="1">Malo</option>
+                                                    </select>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Estado de columnas del institución educativa</td>
+                                                <td>
+                                                    <select class="custom-select " id="inlineFormCustomSelect">
+                                                        <option selected>Seleccione</option>
+                                                        <option value="1">Exelente</option>
+                                                        <option value="1">Buena</option>
+                                                        <option value="1">Regular</option>
+                                                        <option value="1">Malo</option>
+                                                    </select>
+                                                </td>
+                                            </tr>
+
+
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+                <button type="button" class="btn btn-primary" awPreviousStep>Anterior paso</button>
+                <button type="button" class="btn btn-primary" awNextStep>Siguiente paso</button>
+            </aw-wizard-step>
+            <aw-wizard-step stepTitle="FACTOR INSTITUCIONAL" awOptionalStep>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                            FACTOR INSTITUCIONAL                        
+                    </div>
+                    <div class="panel-body">
+                        <form>
+                            <div class="col-md-12 content">
+                                <div class="form-group row">
+                                    <table class="table table-hover">
+                                        <thead>
+                                            <tr>
+                                                <th>Caracteristica</th>
+                                                <th>Calificacion</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Estado de columnas del institución educativa</td>
+                                                <td>
+                                                    <select class="custom-select " id="inlineFormCustomSelect">
+                                                        <option selected>Seleccione</option>
+                                                        <option value="1">Exelente</option>
+                                                        <option value="1">Buena</option>
+                                                        <option value="1">Regular</option>
+                                                        <option value="1">Malo</option>
+                                                    </select>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Estado de columnas del institución educativa</td>
+                                                <td>
+                                                    <select class="custom-select " id="inlineFormCustomSelect">
+                                                        <option selected>Seleccione</option>
+                                                        <option value="1">Exelente</option>
+                                                        <option value="1">Buena</option>
+                                                        <option value="1">Regular</option>
+                                                        <option value="1">Malo</option>
+                                                    </select>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Estado de columnas del institución educativa</td>
+                                                <td>
+                                                    <select class="custom-select " id="inlineFormCustomSelect">
+                                                        <option selected>Seleccione</option>
+                                                        <option value="1">Exelente</option>
+                                                        <option value="1">Buena</option>
+                                                        <option value="1">Regular</option>
+                                                        <option value="1">Malo</option>
+                                                    </select>
+                                                </td>
+                                            </tr>
+
+
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+                <button type="button" class="btn btn-primary" awPreviousStep>Anterior paso</button>
+                <button type="button" class="btn btn-primary" awNextStep>Siguiente paso</button>
+            </aw-wizard-step>
+            <aw-wizard-step stepTitle="FACTOR SOCIAL" awOptionalStep>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                            FACTOR SOCIAL
+                        
+                    </div>
+                    <div class="panel-body">
+                        <form>
+                            <div class="col-md-12 content">
+                                <div class="form-group row">
+                                    <table class="table table-hover">
+                                        <thead>
+                                            <tr>
+                                                <th>Caracteristica</th>
+                                                <th>Calificacion</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Estado de columnas del institución educativa</td>
+                                                <td>
+                                                    <select class="custom-select " id="inlineFormCustomSelect">
+                                                        <option selected>Seleccione</option>
+                                                        <option value="1">Exelente</option>
+                                                        <option value="1">Buena</option>
+                                                        <option value="1">Regular</option>
+                                                        <option value="1">Malo</option>
+                                                    </select>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Estado de columnas del institución educativa</td>
+                                                <td>
+                                                    <select class="custom-select " id="inlineFormCustomSelect">
+                                                        <option selected>Seleccione</option>
+                                                        <option value="1">Exelente</option>
+                                                        <option value="1">Buena</option>
+                                                        <option value="1">Regular</option>
+                                                        <option value="1">Malo</option>
+                                                    </select>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Estado de columnas del institución educativa</td>
+                                                <td>
+                                                    <select class="custom-select " id="inlineFormCustomSelect">
+                                                        <option selected>Seleccione</option>
+                                                        <option value="1">Exelente</option>
+                                                        <option value="1">Buena</option>
+                                                        <option value="1">Regular</option>
+                                                        <option value="1">Malo</option>
+                                                    </select>
+                                                </td>
+                                            </tr>
+
+
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+                <button type="button" class="btn btn-primary" awPreviousStep>Anterior paso</button>
+                <button type="button" class="btn btn-primary" awNextStep>Siguiente paso</button>
+            </aw-wizard-step>
+            <aw-wizard-step stepTitle="FACTOR ACADEMICO">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                            FACTOR ACADEMICO                        
+                    </div>
+                    <div class="panel-body">
+                        <form>
+                            <div class="col-md-12 content">
+                                <div class="form-group row">
+                                    <table class="table table-hover">
+                                        <thead>
+                                            <tr>
+                                                <th>Caracteristica</th>
+                                                <th>Calificacion</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Estado de columnas del institución educativa</td>
+                                                <td>
+                                                    <select class="custom-select " id="inlineFormCustomSelect">
+                                                        <option selected>Seleccione</option>
+                                                        <option value="1">Exelente</option>
+                                                        <option value="1">Buena</option>
+                                                        <option value="1">Regular</option>
+                                                        <option value="1">Malo</option>
+                                                    </select>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Estado de columnas del institución educativa</td>
+                                                <td>
+                                                    <select class="custom-select " id="inlineFormCustomSelect">
+                                                        <option selected>Seleccione</option>
+                                                        <option value="1">Exelente</option>
+                                                        <option value="1">Buena</option>
+                                                        <option value="1">Regular</option>
+                                                        <option value="1">Malo</option>
+                                                    </select>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Estado de columnas del institución educativa</td>
+                                                <td>
+                                                    <select class="custom-select " id="inlineFormCustomSelect">
+                                                        <option selected>Seleccione</option>
+                                                        <option value="1">Exelente</option>
+                                                        <option value="1">Buena</option>
+                                                        <option value="1">Regular</option>
+                                                        <option value="1">Malo</option>
+                                                    </select>
+                                                </td>
+                                            </tr>
+
+
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+                <button type="button" class="btn btn-primary" awPreviousStep>Anterior paso</button>
+                <button type="button" class="btn btn-primary" (click)="finishFunction()">Finalizar</button>
+            </aw-wizard-step>
+        </aw-wizard>
+
     </div>
     <footer class="pull-left footer">
-       
+
     </footer>
 </div>

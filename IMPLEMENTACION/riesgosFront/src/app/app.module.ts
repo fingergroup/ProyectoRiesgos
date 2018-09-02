@@ -2,6 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { NgDatepickerModule } from 'ng2-datepicker';
+import { FormWizardModule } from 'angular-wizard-form';
+import { ArchwizardModule } from 'angular-archwizard';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -47,6 +49,8 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,
     NgDatepickerModule,
+    FormWizardModule,
+    ArchwizardModule,
     RouterModule.forRoot(appRoutes),
   ],
   providers: [],

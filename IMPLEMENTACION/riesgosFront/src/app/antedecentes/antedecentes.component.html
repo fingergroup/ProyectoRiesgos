@@ -1,0 +1,335 @@
+<script>
+    $(function () {
+        $('.navbar-toggle-sidebar').click(function () {
+            $('.navbar-nav').toggleClass('slide-in');
+            $('.side-body').toggleClass('body-slide-in');
+            $('#search').removeClass('in').addClass('collapse').slideUp(200);
+        });
+
+        $('#search-trigger').click(function () {
+            $('.navbar-nav').removeClass('slide-in');
+            $('.side-body').removeClass('body-slide-in');
+            $('.search-input').focus();
+        });
+    });
+</script>
+<nav class="navbar navbar-default navbar-static-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle navbar-toggle-sidebar collapsed">
+                MENU
+            </button>
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#home">
+                Finger Group
+            </a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="http://www.fingergroup.com" target="_blank">Visitenos</a>
+                </li>
+                <li class="dropdown ">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                        Cuenta
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li class="dropdown-header">Modificar</li>
+                        <li class="">
+                            <a href="#">Algo Algo</a>
+                        </li>
+                        <li class="">
+                            <a href="#">Algo Algo</a>
+                        </li>
+                        <li class="">
+                            <a href="#">Algo Algo</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">Cerrar sesión</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
+</nav>
+<div class="container-fluid main-container">
+    <div class="col-md-2 sidebar">
+        <div class="row">
+            <!-- uncomment code for absolute positioning tweek see top comment in css -->
+            <div class="absolute-wrapper"> </div>
+            <!-- Menu -->
+            <div class="side-menu">
+                <nav class="navbar navbar-default" role="navigation">
+                    <!-- Main Menu -->
+                    <div class="side-menu-container">
+                        <ul class="nav navbar-nav">
+                            <li class="active">
+                                <a (click)="eviarHome()">
+                                    <span class="glyphicon glyphicon-home"></span> Home</a>
+                            </li>
+                            <li>
+                                <a (click)="eviarInstituciones()">
+
+                                    <span class="glyphicon glyphicon-edit"></span> Gestionar Establecimiento</a>
+                            </li>
+                            <li>
+                                <a (click)="eviarDatosPoblacion()">
+                                    <span class="glyphicon glyphicon-user"></span> Gestionar Datos Población</a>
+                            </li>
+
+
+                            <!-- Dropdown-->
+                            <li class="panel panel-default" id="dropdown">
+                                <a data-toggle="collapse" href="#dropdown-lvl1">
+                                    <span class="glyphicon glyphicon-warning-sign"></span> Analisis de Riesgo
+                                    <span class="caret"></span>
+                                </a>
+
+                                <!-- Dropdown level 1 -->
+                                <div id="dropdown-lvl1" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        <ul class="nav navbar-nav">
+                                            <li>
+                                                <a (click)="eviarAntecedentes()">
+                                                    <span class="glyphicon glyphicon-random"></span>Antecedentes</a>
+                                            </li>
+                                            <li>
+                                                <a (click)="eviarAmenazas()">
+                                                    <span class="glyphicon glyphicon-flash"></span>Amenazas</a>
+                                            </li>
+                                            <li>
+                                                <a (click)="eviarVulnerabilidad()">
+                                                    <span class="glyphicon glyphicon-grain"></span>Vulnerabilidad</a>
+                                            </li>
+                                            <li>
+                                                <a (click)="eviarRiesgo()">
+                                                    <span class="glyphicon glyphicon-fire"></span>Riesgo</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li>
+                                <a (click)="eviarReportes()" style="cursor:pointer;">
+                                    <span class="glyphicon glyphicon-stats"></span> Reportes</a>
+                            </li>
+
+                        </ul>
+                    </div>
+                    <!-- /.navbar-collapse -->
+                </nav>
+
+            </div>
+        </div>
+    </div>
+    <div class="col-md-10 content">
+        <h4>
+            <strong> REGISTRAR ANTECEDENTES</strong>
+            <div class="datepicker-container">
+                <ng-datepicker [(ngModel)]="date"></ng-datepicker>
+            </div>
+        </h4>
+        <div class="col-md-12 content">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    PLANES ESCOLARES PARA LA GESTION DEL RIESGO - REGISTRO ANTECEDENTES
+                </div>
+                <div class="panel-body">
+                    <form>
+                        <div class="col-md-12 content">
+                            <div class="form-group row">
+                                <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>Evento</th>
+                                            <th>Fecha ocurrencia</th>
+                                            <th>Descripción</th>
+                                            <th>Daños</th>
+                                            <th>Personas</th>
+                                            <th>Apoyo institucional</th>
+                                            <th>Medidas de intervencion</th>
+                                            <th>Acciones</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Evento 1</td>
+                                            <td>2017-01-12</td>
+                                            <td>descripcion de evento</td>
+                                            <td>daños de evento</td>
+                                            <td>personas de evento</td>
+                                            <td>apoyos de evento</td>
+                                            <td>medidas de evento</td>
+                                            <td>
+                                                &#160;
+                                                <a style="cursor:pointer;">
+                                                    <span class="glyphicon glyphicon-edit"></span>
+                                                </a>
+
+                                                &#160;
+                                                <a style="cursor:pointer;">
+                                                    <span class="glyphicon glyphicon-remove"></span>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Evento 2</td>
+                                            <td>2017-01-12</td>
+                                            <td>descripcion de evento</td>
+                                            <td>daños de evento</td>
+                                            <td>personas de evento</td>
+                                            <td>apoyos de evento</td>
+                                            <td>medidas de evento</td>
+                                            <td>
+                                                &#160;
+                                                <a style="cursor:pointer;">
+                                                    <span class="glyphicon glyphicon-edit"></span>
+                                                </a>
+
+                                                &#160;
+                                                <a style="cursor:pointer;">
+                                                    <span class="glyphicon glyphicon-remove"></span>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Evento 3</td>
+                                            <td>2017-01-12</td>
+                                            <td>descripcion de evento</td>
+                                            <td>daños de evento</td>
+                                            <td>personas de evento</td>
+                                            <td>apoyos de evento</td>
+                                            <td>medidas de evento</td>
+                                            <td>
+                                                &#160;
+                                                <a style="cursor:pointer;">
+                                                    <span class="glyphicon glyphicon-edit"></span>
+                                                </a>
+
+                                                &#160;
+                                                <a style="cursor:pointer;">
+                                                    <span class="glyphicon glyphicon-remove"></span>
+                                                </a>
+                                            </td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Registrar Antecedentes</button>
+                            </div>
+
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>       
+
+    </div>
+    <footer class="pull-left footer">
+
+    </footer>
+</div>
+<!-- Modal -->
+<div class="modal fade bd-example-modal-lg" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+ aria-hidden="true">
+<div class="modal-dialog modal-lg">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h4 class="modal-title" id="exampleModalLabel">
+                <strong>REGISTRO ANTECEDENTES</strong>
+            </h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <div class="col-md-12 content">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                            PLANES ESCOLARES PARA LA GESTION DEL RIESGO - REGISTRO ANTECEDENTES
+                    </div>
+                    <div class="panel-body">                             
+                                            <form>
+                                                <div class="form-group row">
+                                                    <label for="email" class="col-sm-2 col-form-label">Tipo evento:</label>
+                                                    <div class="col-sm-4">
+                                                        <select class="custom-select " id="inlineFormCustomSelect">
+                                                            <option selected>Seleccione</option>
+                                                            <option value="1">Accidente Transito</option>
+                                                            <option value="1">Accidente Ferroviario</option>
+                                                            <option value="1">Atracos</option>
+                                                        </select>
+                                                    </div>
+                                                    <label class="col-sm-2 col-form-label">Fecha de ocurrencia:</label>
+                                                    <div class="col-sm-4">
+                                                        <div class="datepicker-container">
+                                                            <ng-datepicker [(ngModel)]="date"></ng-datepicker>
+                                                        </div>
+                            
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="comment">Descripción:</label>
+                                                    <textarea class="form-control" rows="3" id="comment"></textarea>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label for="email" class="col-sm-2 col-form-label">Daños:</label>
+                                                    <div class="col-sm-10">
+                                                        <label class="radio-inline">
+                                                            <input type="radio" name="optradio" checked>Equipo</label>
+                                                        <label class="radio-inline">
+                                                            <input type="radio" name="optradio">Instalaciones</label>
+                                                        <label class="radio-inline">
+                                                            <input type="radio" name="optradio">Ambiente</label>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label for="email" class="col-sm-2 col-form-label">Personas:</label>
+                                                    <div class="col-sm-10">
+                                                        <label class="radio-inline">
+                                                            <input type="radio" name="optradio" checked>Afectados</label>
+                                                        <label class="radio-inline">
+                                                            <input type="radio" name="optradio">Lesionados</label>
+                                                        <label class="radio-inline">
+                                                            <input type="radio" name="optradio">Fallecidos</label>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="comment">Apoyo institucional:</label>
+                                                    <textarea class="form-control" rows="3" id="comment"></textarea>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="comment">Medidas de Intervencion</label>
+                                                    <textarea class="form-control" rows="3" id="comment"></textarea>
+                                                </div>
+                                            </form>
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                        <button type="button" class="btn btn-primary">Guardar</button>
+                                        </div>
+                                    </div>                              
+
+        </div>
+        <div class="modal-footer">
+
+        </div>
+    </div>
+</div>
+</div>
+
+<!-- modal -->
